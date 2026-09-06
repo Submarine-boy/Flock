@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flock Coffee House — Coffee &amp; Food in Norwich</title>
+  <meta name="description" content="Flock Coffee House — independent coffee house in Norwich offering coffee, food and a welcoming atmosphere near St Stephens Square.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Editorial serif for headings + modern sans for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header" data-scroll>
+    <div class="container header-inner">
+      <div class="logo">FLOCK</div>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="cta" href="#visit">Visit Flock</a>
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <!-- Replace this SVG with Flock's hero photography (use large, optimized JPG/WEBP). -->
+        <svg class="hero-placeholder" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder image: interior and coffee">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#efe7dd" />
+              <stop offset="1" stop-color="#e8d6c8" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#g)" />
+          <g fill="#c8b09a" opacity="0.6">
+            <circle cx="300" cy="300" r="250" />
+            <rect x="900" y="200" width="480" height="360" rx="12"/>
+          </g>
+          <text x="80" y="820" font-family="Inter, sans-serif" font-size="24" fill="#6b5243">Hero photography placeholder — replace with Flock's imagery</text>
+        </svg>
+      </div>
+
+      <div class="hero-content container">
+        <h1 class="hero-eyebrow">FLOCK COFFEE HOUSE</h1>
+        <p class="hero-tag">Coffee, food &amp; good vibes in Norwich.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#menu">Explore the Menu</a>
+          <a class="btn ghost" href="#visit">Find Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section id="intro" class="intro container">
+      <h2>Good coffee. Good food. Good people.</h2>
+      <p class="lead">Flock is an independent coffee house in Norwich offering well-crafted coffee, simple seasonal food and a welcoming atmosphere near St Stephens Square. We serve customers for dine-in, takeaway and delivery.</p>
+    </section>
+
+    <!-- THE FLOCK EXPERIENCE -->
+    <section id="about" class="experience">
+      <div class="container grid-2">
+        <div class="media-block">
+          <!-- Replace with photography of coffee preparation / interior / records / Pac-Man -->
+          <svg class="placeholder-card" viewBox="0 0 800 600" role="img" aria-label="Placeholder photo: coffee and interior">
+            <rect width="100%" height="100%" fill="#efe7dd" />
+            <text x="20" y="580" font-family="Inter, sans-serif" font-size="16" fill="#6b5243">Photo placeholder — replace with Flock images</text>
+          </svg>
+        </div>
+        <div class="text-block">
+          <h3>A little bit different.</h3>
+          <p>Warm, cosy and friendly — Flock pairs thoughtful coffee and creative food with a relaxed, family-friendly atmosphere. Look out for the hip-hop records, Pac‑Man machine and small interior details that give the place personality.</p>
+          <ul class="feature-list">
+            <li>Carefully prepared coffee and batch brews</li>
+            <li>Fresh pastries and homemade food</li>
+            <li>Community feeling and relaxed seating</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="menu container">
+      <header class="section-header">
+        <h2>The Menu</h2>
+        <p class="muted">Tap or click a category to explore. Items without details are editable.</p>
+      </header>
+
+      <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+        <button class="tab active" data-target="coffee">Coffee</button>
+        <button class="tab" data-target="food">Food</button>
+        <button class="tab" data-target="sweets">Sweet Treats</button>
+      </div>
+
+      <div class="menu-panels">
+        <div id="coffee" class="panel active" role="tabpanel">
+          <ul class="menu-list">
+            <li class="menu-item"><strong>Latte</strong><span class="note">— espresso &amp; milk</span></li>
+            <li class="menu-item"><strong>Filter Coffee</strong><span class="note">— batch or pour-over</span></li>
+            <li class="menu-item"><strong>Batch Brew</strong></li>
+            <li class="menu-item"><strong>Dirty Chai</strong></li>
+          </ul>
+        </div>
+
+        <div id="food" class="panel" role="tabpanel" hidden>
+          <ul class="menu-list">
+            <li class="menu-item"><strong>Homemade Soup</strong><span class="editable"> — details editable</span></li>
+            <li class="menu-item"><strong>Bagels</strong><span class="editable"> — details editable</span></li>
+            <li class="menu-item"><strong>Coffee Cake</strong></li>
+            <li class="menu-item"><strong>Banana Bread</strong></li>
+            <li class="menu-item"><strong>Almond Croissants</strong></li>
+          </ul>
+        </div>
+
+        <div id="sweets" class="panel" role="tabpanel" hidden>
+          <ul class="menu-list">
+            <li class="menu-item"><strong>Sweet Treats</strong><span class="editable"> — see in-cafe selection</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted small">Prices and full menu details are editable in the site admin. No prices have been included.</p>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews container">
+      <div class="reviews-header">
+        <h2>Reviews</h2>
+        <div class="score">4.9 ★ <span class="muted">— 139 reviews</span></div>
+      </div>
+
+      <div class="review-carousel" aria-label="Customer reviews">
+        <!-- These are short paraphrases from provided feedback; do not invent full reviews. -->
+        <blockquote class="review">"Great coffee and friendly staff — lovely atmosphere."</blockquote>
+        <blockquote class="review">"Fantastic food and cosy seating; family-friendly vibe."</blockquote>
+        <blockquote class="review">"Creative drinks, warm service and interesting interior details."</blockquote>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section id="visit" class="visit container">
+      <h2>Come find us.</h2>
+      <p class="address">45 St Stephens Square<br>Norwich NR1 3SS<br>United Kingdom</p>
+      <div class="visit-grid">
+        <div class="map">
+          <!-- Embedded map: replace or configure if required. This uses an open Google Maps search link for the address provided. -->
+          <iframe title="Map to Flock Coffee House" src="https://www.google.com/maps?q=45+St+Stephens+Square,+Norwich+NR1+3SS&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="visit-info">
+          <div class="services"><strong>Services:</strong> Dine-in, Takeaway, Delivery</div>
+          <div class="hours editable">
+            <strong>Opening hours</strong>
+            <p class="muted">Add opening hours here (editable)</p>
+          </div>
+          <a class="btn primary" href="https://www.google.com/maps/dir/?api=1&destination=45+St+Stephens+Square+Norwich+NR1+3SS" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact container">
+      <h2>Contact</h2>
+      <p class="muted">Use these fields to add phone, email and social links.</p>
+      <ul class="contact-list">
+        <li>Phone: <span class="editable">Add phone</span></li>
+        <li>Email: <span class="editable">Add email</span></li>
+        <li>Instagram: <span class="editable">@</span></li>
+        <li>Facebook: <span class="editable">@</span></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand">
+        <div class="logo">FLOCK COFFEE HOUSE</div>
+        <div class="tag">Coffee, food &amp; good vibes in Norwich.</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="legal">© 2026 Flock Coffee House</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
