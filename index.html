@@ -30,10 +30,9 @@
     <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-media" aria-hidden="true">
-        <!-- Responsive picture using the uploaded image 1.jpeg as the source for now. -->
+        <!-- Fallback to the uploaded image in the repository root. Removed webp <source> entries to avoid 404s until optimized assets exist. -->
         <picture>
-          <source type="image/webp" srcset="assets/images/hero-480.webp 480w, assets/images/hero-900.webp 900w, assets/images/hero-1400.webp 1400w, assets/images/hero-2000.webp 2000w" sizes="(max-width:900px) 100vw, 1200px">
-          <img class="hero-image" src="1.jpeg" alt="Interior with wooden tables and coffee counter — replace with accurate alt text" loading="lazy" decoding="async">
+          <img class="hero-image" src="./1.jpeg" alt="Interior with wooden tables and coffee counter — replace with accurate alt text" loading="lazy" decoding="async">
         </picture>
       </div>
 
@@ -57,10 +56,9 @@
     <section id="about" class="experience">
       <div class="container grid-2">
         <div class="media-block">
-          <!-- Interior photo (uploaded as 3.jpeg). -->
+          <!-- Interior photo (uploaded as 3.jpeg). Removed webp <source> to avoid 404s. -->
           <picture>
-            <source type="image/webp" srcset="assets/images/interior-480.webp 480w, assets/images/interior-900.webp 900w" sizes="(max-width:900px) 100vw, 50vw">
-            <img class="placeholder-card" src="3.jpeg" alt="Interior seating with records and cosy lighting — replace with accurate alt text" loading="lazy" decoding="async">
+            <img class="placeholder-card" src="./3.jpeg" alt="Interior seating with records and cosy lighting — replace with accurate alt text" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="text-block">
@@ -83,32 +81,27 @@
             <ul class="slides">
               <li class="slide">
                 <picture>
-                  <source type="image/webp" srcset="assets/images/hero-900.webp 900w, assets/images/hero-1400.webp 1400w" sizes="(max-width:900px) 100vw, 1200px">
-                  <img src="1.jpeg" alt="Interior with wooden tables and coffee counter" loading="lazy" decoding="async">
+                  <img src="./1.jpeg" alt="Interior with wooden tables and coffee counter" loading="lazy" decoding="async">
                 </picture>
               </li>
               <li class="slide">
                 <picture>
-                  <source type="image/webp" srcset="assets/images/coffee-900.webp 900w, assets/images/coffee-1400.webp 1400w">
-                  <img src="2.jpeg" alt="Close-up of a latte" loading="lazy" decoding="async">
+                  <img src="./2.jpeg" alt="Close-up of a latte" loading="lazy" decoding="async">
                 </picture>
               </li>
               <li class="slide">
                 <picture>
-                  <source type="image/webp" srcset="assets/images/interior-900.webp 900w, assets/images/interior-1400.webp 1400w">
-                  <img src="3.jpeg" alt="Interior seating with records and cosy lighting" loading="lazy" decoding="async">
+                  <img src="./3.jpeg" alt="Interior seating with records and cosy lighting" loading="lazy" decoding="async">
                 </picture>
               </li>
               <li class="slide">
                 <picture>
-                  <source type="image/webp" srcset="assets/images/pastry-900.webp 900w, assets/images/pastry-1400.webp 1400w">
-                  <img src="4.jpeg" alt="Almond croissant on a plate" loading="lazy" decoding="async">
+                  <img src="./4.jpeg" alt="Almond croissant on a plate" loading="lazy" decoding="async">
                 </picture>
               </li>
               <li class="slide">
                 <picture>
-                  <source type="image/webp" srcset="assets/images/detail-900.webp 900w, assets/images/detail-1400.webp 1400w">
-                  <img src="5.jpeg" alt="Interior detail: records and a vintage game machine" loading="lazy" decoding="async">
+                  <img src="./5.jpeg" alt="Interior detail: records and a vintage game machine" loading="lazy" decoding="async">
                 </picture>
               </li>
             </ul>
@@ -117,11 +110,11 @@
           <button class="gallery-btn next" aria-label="Next photo">›</button>
 
           <div class="thumbnails" role="tablist" aria-label="Gallery thumbnails">
-            <button class="thumb active" data-index="0" aria-label="View photo 1"><img src="1.jpeg" alt=""></button>
-            <button class="thumb" data-index="1" aria-label="View photo 2"><img src="2.jpeg" alt=""></button>
-            <button class="thumb" data-index="2" aria-label="View photo 3"><img src="3.jpeg" alt=""></button>
-            <button class="thumb" data-index="3" aria-label="View photo 4"><img src="4.jpeg" alt=""></button>
-            <button class="thumb" data-index="4" aria-label="View photo 5"><img src="5.jpeg" alt=""></button>
+            <button class="thumb active" data-index="0" aria-label="View photo 1"><img src="./1.jpeg" alt="Thumbnail 1"></button>
+            <button class="thumb" data-index="1" aria-label="View photo 2"><img src="./2.jpeg" alt="Thumbnail 2"></button>
+            <button class="thumb" data-index="2" aria-label="View photo 3"><img src="./3.jpeg" alt="Thumbnail 3"></button>
+            <button class="thumb" data-index="3" aria-label="View photo 4"><img src="./4.jpeg" alt="Thumbnail 4"></button>
+            <button class="thumb" data-index="4" aria-label="View photo 5"><img src="./5.jpeg" alt="Thumbnail 5"></button>
           </div>
         </div>
       </div>
