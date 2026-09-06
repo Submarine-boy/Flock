@@ -30,9 +30,10 @@
     <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-media" aria-hidden="true">
-        <!-- Using uploaded image 1.jpeg as the hero. Replace files or alt text as needed. -->
+        <!-- Responsive picture using the uploaded image 1.jpeg as the source for now. -->
         <picture>
-          <img class="hero-image" src="1.jpeg" alt="Hero image — replace with accurate alt text" loading="lazy" decoding="async">
+          <source type="image/webp" srcset="assets/images/hero-480.webp 480w, assets/images/hero-900.webp 900w, assets/images/hero-1400.webp 1400w, assets/images/hero-2000.webp 2000w" sizes="(max-width:900px) 100vw, 1200px">
+          <img class="hero-image" src="1.jpeg" alt="Interior with wooden tables and coffee counter — replace with accurate alt text" loading="lazy" decoding="async">
         </picture>
       </div>
 
@@ -56,9 +57,10 @@
     <section id="about" class="experience">
       <div class="container grid-2">
         <div class="media-block">
-          <!-- Using uploaded image 3.jpeg as interior/coffee photo. Replace as needed. -->
+          <!-- Interior photo (uploaded as 3.jpeg). -->
           <picture>
-            <img class="placeholder-card" src="3.jpeg" alt="Interior or detail photo — replace with accurate alt text" loading="lazy" decoding="async">
+            <source type="image/webp" srcset="assets/images/interior-480.webp 480w, assets/images/interior-900.webp 900w" sizes="(max-width:900px) 100vw, 50vw">
+            <img class="placeholder-card" src="3.jpeg" alt="Interior seating with records and cosy lighting — replace with accurate alt text" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="text-block">
@@ -72,12 +74,55 @@
         </div>
       </div>
 
-      <div class="container experience-gallery" aria-hidden="true">
-        <!-- Secondary images from uploaded files: coffee closeup, pastry, Pac-Man/records -->
-        <div class="gallery-row">
-          <picture><img src="2.jpeg" alt="Coffee close-up — replace alt text" loading="lazy" decoding="async"></picture>
-          <picture><img src="4.jpeg" alt="Pastry close-up — replace alt text" loading="lazy" decoding="async"></picture>
-          <picture><img src="5.jpeg" alt="Interior detail (records / Pac-Man) — replace alt text" loading="lazy" decoding="async"></picture>
+      <div class="container experience-gallery">
+        <!-- Implemented gallery slider: single large slide view with prev/next and thumbnail strip -->
+        <div class="gallery-slider" aria-roledescription="carousel" aria-label="Flock photo gallery">
+          <button class="gallery-btn prev" aria-label="Previous photo">‹</button>
+
+          <div class="slides-wrapper">
+            <ul class="slides">
+              <li class="slide">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/hero-900.webp 900w, assets/images/hero-1400.webp 1400w" sizes="(max-width:900px) 100vw, 1200px">
+                  <img src="1.jpeg" alt="Interior with wooden tables and coffee counter" loading="lazy" decoding="async">
+                </picture>
+              </li>
+              <li class="slide">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/coffee-900.webp 900w, assets/images/coffee-1400.webp 1400w">
+                  <img src="2.jpeg" alt="Close-up of a latte" loading="lazy" decoding="async">
+                </picture>
+              </li>
+              <li class="slide">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/interior-900.webp 900w, assets/images/interior-1400.webp 1400w">
+                  <img src="3.jpeg" alt="Interior seating with records and cosy lighting" loading="lazy" decoding="async">
+                </picture>
+              </li>
+              <li class="slide">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/pastry-900.webp 900w, assets/images/pastry-1400.webp 1400w">
+                  <img src="4.jpeg" alt="Almond croissant on a plate" loading="lazy" decoding="async">
+                </picture>
+              </li>
+              <li class="slide">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/detail-900.webp 900w, assets/images/detail-1400.webp 1400w">
+                  <img src="5.jpeg" alt="Interior detail: records and a vintage game machine" loading="lazy" decoding="async">
+                </picture>
+              </li>
+            </ul>
+          </div>
+
+          <button class="gallery-btn next" aria-label="Next photo">›</button>
+
+          <div class="thumbnails" role="tablist" aria-label="Gallery thumbnails">
+            <button class="thumb active" data-index="0" aria-label="View photo 1"><img src="1.jpeg" alt=""></button>
+            <button class="thumb" data-index="1" aria-label="View photo 2"><img src="2.jpeg" alt=""></button>
+            <button class="thumb" data-index="2" aria-label="View photo 3"><img src="3.jpeg" alt=""></button>
+            <button class="thumb" data-index="3" aria-label="View photo 4"><img src="4.jpeg" alt=""></button>
+            <button class="thumb" data-index="4" aria-label="View photo 5"><img src="5.jpeg" alt=""></button>
+          </div>
         </div>
       </div>
     </section>
@@ -133,7 +178,6 @@
       </div>
 
       <div class="review-carousel" aria-label="Customer reviews">
-        <!-- These are short paraphrases from provided feedback; do not invent full reviews. -->
         <blockquote class="review">"Great coffee and friendly staff — lovely atmosphere."</blockquote>
         <blockquote class="review">"Fantastic food and cosy seating; family-friendly vibe."</blockquote>
         <blockquote class="review">"Creative drinks, warm service and interesting interior details."</blockquote>
@@ -146,7 +190,6 @@
       <p class="address">45 St Stephens Square<br>Norwich NR1 3SS<br>United Kingdom</p>
       <div class="visit-grid">
         <div class="map">
-          <!-- Embedded map: replace or configure if required. This uses an open Google Maps search link for the address provided. -->
           <iframe title="Map to Flock Coffee House" src="https://www.google.com/maps?q=45+St+Stephens+Square,+Norwich+NR1+3SS&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="visit-info">
