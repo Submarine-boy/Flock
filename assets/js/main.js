@@ -99,3 +99,70 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 });
+
+/* Runtime guard: if WebP sources fail to load on GitHub Pages (404), swap to existing JPEG fallbacks.
+   This is non-destructive and only changes src at runtime so users see images instead of alt text.
+*/
+(function(){
+  function getFallbackForName(name){
+    name = name.toLowerCase();
+    if(name.includes('hero')) return './1.jpeg';
+    if(name.includes('coffee')) return './2.jpeg';
+    if(name.includes('interior')) return './3.jpeg';
+    if(name.includes('pastry')) return './4.jpeg';
+    if(name.includes('detail')) return './5.jpeg';
+    // fallback to first uploaded image
+    return './1.jpeg';
+  }
+
+  function applyFallbackToImg(img){
+    if(!img) return;
+    // If currentSrc or src references a webp or assets/images path that 404ed, replace with a fallback
+    try{
+      const srcToCheck = (img.currentSrc && img.currentSrc.length) ? img.currentSrc : img.src || '';
+      if(/\.webp(\?|$)/i.test(srcToCheck) || /assets\/images\//i.test(srcToCheck)){
+        const filenameMatch = srcToCheck.match(/([a-z0-9-_]+)\.webp/i);
+        const name = filenameMatch ? filenameMatch[1] : srcToCheck;
+        const fallback = getFallbackForName(name);
+        if(img.src !== fallback){
+          img.dataset._fallbackApplied = '1';
+          img.src = fallback;
+        }
+      }
+    }catch(e){ /* ignore */ }
+
+    // ensure we have an error handler that swaps to a JPEG fallback if the image fails
+    img.addEventListener('error', function onErr(){
+      if(img.dataset._fallbackErr) return; // already tried
+      img.dataset._fallbackErr = '1';
+      // derive fallback from filename
+      const src = img.src || '';
+      const m = src.match(/([a-z0-9-_]+)(?:-[0-9]{2,4})?\.(webp|jpg|jpeg|png)/i);
+      const base = m ? m[1] : src;
+      const fallback = getFallbackForName(base);
+      if(img.src !== fallback){ img.src = fallback; }
+    });
+  }
+
+  // Remove <source> nodes that reference non-existing webp files (prevents additional 404 attempts)
+  document.querySelectorAll('source').forEach(s => {
+    try{
+      // if the srcset contains assets/images/*.webp and those files don't exist on the server, removing the <source> is safe
+      if(s.srcset && /assets\/images\/.+\.webp/i.test(s.srcset)) s.parentNode && s.parentNode.removeChild(s);
+    }catch(e){}
+  });
+
+  // Apply to existing imgs
+  document.querySelectorAll('img').forEach(img => applyFallbackToImg(img));
+
+  // Observe future img additions (in case of dynamic update)
+  const mo = new MutationObserver(muts => {
+    muts.forEach(m => {
+      m.addedNodes && m.addedNodes.forEach(node => {
+        if(node && node.tagName === 'IMG') applyFallbackToImg(node);
+        if(node && node.querySelectorAll) node.querySelectorAll('img').forEach(i => applyFallbackToImg(i));
+      });
+    });
+  });
+  mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
+})();
