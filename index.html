@@ -30,21 +30,10 @@
     <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-media" aria-hidden="true">
-        <!-- Replace this SVG with Flock's hero photography (use large, optimized JPG/WEBP). -->
-        <svg class="hero-placeholder" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder image: interior and coffee">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1">
-              <stop offset="0" stop-color="#efe7dd" />
-              <stop offset="1" stop-color="#e8d6c8" />
-            </linearGradient>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#g)" />
-          <g fill="#c8b09a" opacity="0.6">
-            <circle cx="300" cy="300" r="250" />
-            <rect x="900" y="200" width="480" height="360" rx="12"/>
-          </g>
-          <text x="80" y="820" font-family="Inter, sans-serif" font-size="24" fill="#6b5243">Hero photography placeholder — replace with Flock's imagery</text>
-        </svg>
+        <!-- Using uploaded image 1.jpeg as the hero. Replace files or alt text as needed. -->
+        <picture>
+          <img class="hero-image" src="1.jpeg" alt="Hero image — replace with accurate alt text" loading="lazy" decoding="async">
+        </picture>
       </div>
 
       <div class="hero-content container">
@@ -67,11 +56,10 @@
     <section id="about" class="experience">
       <div class="container grid-2">
         <div class="media-block">
-          <!-- Replace with photography of coffee preparation / interior / records / Pac-Man -->
-          <svg class="placeholder-card" viewBox="0 0 800 600" role="img" aria-label="Placeholder photo: coffee and interior">
-            <rect width="100%" height="100%" fill="#efe7dd" />
-            <text x="20" y="580" font-family="Inter, sans-serif" font-size="16" fill="#6b5243">Photo placeholder — replace with Flock images</text>
-          </svg>
+          <!-- Using uploaded image 3.jpeg as interior/coffee photo. Replace as needed. -->
+          <picture>
+            <img class="placeholder-card" src="3.jpeg" alt="Interior or detail photo — replace with accurate alt text" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="text-block">
           <h3>A little bit different.</h3>
@@ -81,6 +69,15 @@
             <li>Fresh pastries and homemade food</li>
             <li>Community feeling and relaxed seating</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="container experience-gallery" aria-hidden="true">
+        <!-- Secondary images from uploaded files: coffee closeup, pastry, Pac-Man/records -->
+        <div class="gallery-row">
+          <picture><img src="2.jpeg" alt="Coffee close-up — replace alt text" loading="lazy" decoding="async"></picture>
+          <picture><img src="4.jpeg" alt="Pastry close-up — replace alt text" loading="lazy" decoding="async"></picture>
+          <picture><img src="5.jpeg" alt="Interior detail (records / Pac-Man) — replace alt text" loading="lazy" decoding="async"></picture>
         </div>
       </div>
     </section>
